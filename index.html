@@ -80,6 +80,7 @@ nav {
   background: transparent;
   transition: all 0.4s ease;
   height: 60px;
+  overflow: hidden;
 }
 
 /* estado ao rolar */
@@ -750,6 +751,109 @@ footer {
 }
 .nav-dropdown:hover .nav-dropdown-menu { display: block; }
 .nav-dropdown-trigger::after { content: ''; }
+
+/* ===== FIX NAV DESKTOP ===== */
+@media (min-width: 1024px) {
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+  }
+
+  /* LOGO fica acima de tudo */
+  .nav-logo {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  /* LINKS ficam organizados e NÃO passam por trás */
+  .nav-links {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 40px; /* empurra os links pra direita */
+  }
+
+  /* impede sobreposição visual */
+  nav {
+    background: rgba(10, 14, 26, 0.95);
+  }
+
+  }
+
+  /* ===== AUMENTAR LOGOS APENAS NO DESKTOP ===== */
+@media (min-width: 1024px) {
+
+  /* ===== LOGO DO NAV ===== */
+  .nav-logo img {
+    height: 160px;              /* base */
+    transform: scale(1.3);     /* aumenta visual sem quebrar layout */
+    transform-origin: left center;
+  }
+
+  /* ===== LOGO DO RODAPÉ ===== */
+  .footer-brand img {
+    height: 240px;              /* aumenta o tamanho */
+  }
+
+  }
+
+  @media (min-width: 1024px) {
+
+  footer img {
+    height: 110px !important;
+  }
+
+  }
+
+  /* ===== REDUZIR RODAPÉ NO DESKTOP ===== */
+@media (min-width: 1024px) {
+
+  footer {
+    padding: 0 2rem 0.8rem; /* antes era muito grande */
+  }
+
+  .footer-content {
+    gap: 2rem; /* reduz espaço entre blocos */
+  }
+
+  .footer-brand img {
+    height: 20px; /* ajusta proporcional */
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  }
+
+  @media (min-width: 1024px) {
+
+  .footer-brand img:first-child {
+    height: 200px; !important;
+  }
+
+}
+
 </style>
 </head>
 <body>
@@ -1046,7 +1150,7 @@ footer {
     <div class="footer-links">
       <h4>Contato</h4>
       <a href="https://wa.me/5527999262269?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Master%20Financiamentos.">WhatsApp</a>
-      <a href="mailto:"masterfinanciamentosacz@gmail.com">
+      <a href="mailto:masterfinanciamentos@gmail.com">
         Envie-nos um e-mail
       </a>
       <a href="https://www.instagram.com/master.financiamentos/" target="_blank">Instagram</a>
