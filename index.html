@@ -73,18 +73,19 @@ nav {
   position: absolute; /* antes era fixed */
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 1rem 3rem;
+  padding: 0 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: transparent;
   transition: all 0.4s ease;
+  height: 60px;
 }
 
 /* estado ao rolar */
 nav.scrolled {
   position: fixed;
-  padding: 0.4rem 3rem;
+  padding: 0 3rem;
   background: rgba(10, 14, 26, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201, 152, 44, 0.1);
@@ -92,6 +93,7 @@ nav.scrolled {
 
 /* logo */
 .nav-logo img {
+  display: block;
   height: 120px;
   transform: scale(1.4);
   transform-origin: left center;
